@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameSceneManager : MonoBehaviour
+namespace GameState
 {
-    public static void LoadIntoMainMenu()
+    public class GameSceneManager : MonoBehaviour
     {
-        SceneManager.LoadScene("MainMenu");
+        public static void LoadIntoMainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        public static void LoadIntoGame()
+        {
+            SceneManager.LoadScene("GameMap");
+        }
+
+        public static void LoadIntoScoreBoard()
+        {
+            SceneManager.LoadScene("ScoreBoard");
+        }
     }
 
-    public static void LoadIntoGame()
-    {
-        SceneManager.LoadScene("GameMap");
-    }
-
-    public static void LoadIntoScoreBoard()
-    {
-        SceneManager.LoadScene("ScoreBoard");
-    }
 }
