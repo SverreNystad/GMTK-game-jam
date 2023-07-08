@@ -5,8 +5,8 @@ using UnityEngine;
 public class MainBossHandler : MonoBehaviour
 {
     [SerializeField] private string bossName;
-    [SerializeField, SerializeReference] private Abilities[] abilities;
-    [SerializeField, SerializeReference] private Items[] items;
+    [SerializeReference] private Ability[] abilities; // 
+    [SerializeReference] private Item[] items;
     [SerializeField] private int health;
     [SerializeField] private MoveCharacter movementController;
     [SerializeField] private float speed;
@@ -20,6 +20,6 @@ public class MainBossHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (var ability in abilities) ability.DoUpdate();
     }
 }

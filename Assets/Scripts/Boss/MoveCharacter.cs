@@ -9,8 +9,6 @@ using UnityEngine.InputSystem;
     {
 
         [SerializeField] private Rigidbody2D rb;
-        // private float movementX;
-        // private float movementY;
         private Vector2 movement;
         [SerializeField] private int speed;
 
@@ -28,11 +26,21 @@ using UnityEngine.InputSystem;
         /// Move the character to the target position
         /// The method takes the transform of the wanted character and the target position
         /// </summary>
-        public void OnMove(InputValue movementValue)
+        private void OnMove(InputValue movementValue)
         {
             movement = movementValue.Get<Vector2>();
-            // movementX = movementVector.x;
-            // movementY = movementVector.y;
+        }
+
+        private void OnAbilityOne() {
+            Debug.Log("Ability one pressed");
+        }
+
+        private void OnAbilityTwo() {
+            Debug.Log("Ability two pressed");
+        }
+
+        private void OnAbilityThree() {
+            Debug.Log("Ability three pressed");
         }
 
         public void DoFixedMove() 
