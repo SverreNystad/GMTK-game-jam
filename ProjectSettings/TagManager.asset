@@ -44,6 +44,12 @@ TagManager:
   - name: Furniture
     uniqueID: 4192197371
     locked: 0
-  - name: Decorations
+  - name: Decorations_background
+    uniqueID: 1034045361
+    locked: 0
+  - name: Character
+    uniqueID: 3995698909
+    locked: 0
+  - name: Decorations_foreground
     uniqueID: 2816688503
     locked: 0
