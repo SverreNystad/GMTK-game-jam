@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1567b65df953cb4d2a5f6c74497df2ed, type: 3}
   m_Name: KatanaSliceOBJ
   m_EditorClassIdentifier: 
-  <cooldown>k__BackingField: 0
-  katanaObjPrefab: {fileID: 0}
+  <cooldown>k__BackingField: 1
+  katanaObjPrefab: {fileID: 8435051337372439919, guid: 2371b547839f426cfacbc6b5f36ea8db, type: 3}
   damage: 10
   attackDuration: 0.5
+  spawnOffset: 1

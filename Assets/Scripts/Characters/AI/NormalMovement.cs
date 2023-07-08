@@ -39,7 +39,7 @@ namespace AIMovement
         }
 
         private Vector2 FindDirection() {
-            // aggressiveness
+            // When aggressiveness is high have a larger likelihood of 
             // Vector2 movement = new
             return new Vector2(0,0);
          }

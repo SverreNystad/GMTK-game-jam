@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6848d8c8236cbe76b2e0db2178cb779, type: 3}
   m_Name: DrinkBeerOBJ
   m_EditorClassIdentifier: 
-  cooldown: 1
+  <cooldown>k__BackingField: 1
   healingAmount: 100
