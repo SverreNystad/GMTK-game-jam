@@ -4,13 +4,15 @@ using UnityEngine;
 
 namespace AIMovement
 {
-    public class AggresiveMovement : MonoBehaviour, IMovement 
+    public class NormalMovement : MonoBehaviour, IMovement 
     {        
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private Rigidbody2D target;
         private string targetTag = "Boss";
 
         private Vector2 movement;
+
+        private float aggressiveness;
         [SerializeField] private int speed;
         void Start()
         {
@@ -35,6 +37,12 @@ namespace AIMovement
             this.movement = new_move;
             rb.MovePosition(new_move);
         }
+
+        private Vector2 FindDirection() {
+            // aggressiveness
+            // Vector2 movement = new
+            return new Vector2(0,0);
+         }
 
     }
 }

@@ -25,10 +25,9 @@ public class KatanaSlice : Ability
         
         if (movement != null) {
             spawnedKatanaObj.transform.rotation = Quaternion.identity;
-            spawnedKatanaObj.transform.localPosition = movement.GetLastDirection().normalized*spawnOffset;//new Vector3(0.0f, spawnOffset, 0.0f);
-            // spawnedKatanaObj.transform.RotateAround(spawnedKatanaObj.transform.parent.position/*new Vector3(0.0f, 0.0f, 0.0f)*/, new Vector3(0.0f, 0.0f, 1.0f), Vector2.Angle(Vector2.up, movement.GetLastDirection())); //spawnedKatanaObj.transform.parent.position
-            spawnedKatanaObj.transform.localEulerAngles = new Vector3(0.0f, 0.0f, Vector2.Angle(Vector2.up, movement.GetLastDirection())*Mathf.Sign(-movement.GetLastDirection().x)*Mathf.Sign(movement.GetLastDirection().y));
-            // Debug.Log($"Before position: {spawnedKatanaObj.transform.position} | rotation: {spawnedKatanaObj.transform.rotation}");
+            spawnedKatanaObj.transform.localPosition = movement.GetLastDirection().normalized*spawnOffset;
+            float goingDown = Mathf.Sign(movement.GetLastDirection().y);
+            spawnedKatanaObj.transform.localEulerAngles = new Vector3(0.0f, 0.0f, Vector2.Angle(Vector2.up, movement.GetLastDirection())*Mathf.Sign(-movement.GetLastDirection().x*goingDown)*Mathf.Sign(movement.GetLastDirection().y));
         }
 
         if (katanaLivedTime < attackDuration) return;
