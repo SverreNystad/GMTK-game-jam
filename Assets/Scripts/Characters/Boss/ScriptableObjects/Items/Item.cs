@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Item : ScriptableObject
 {
-    [SerializeField] public AffectsType type {get; private set;}
+    [SerializeField] public EffectTypeMultiplier type {get; private set;}
     [SerializeField] public float amount {get; private set;}
 
 

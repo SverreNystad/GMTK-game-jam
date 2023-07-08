@@ -16,6 +16,22 @@ PrefabInstance:
       propertyPath: health
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 618240054149732364, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
+      propertyPath: abilities.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 618240054149732364, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
+      propertyPath: abilities.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e7f31526209278954992f404671877b0, type: 2}
+    - target: {fileID: 618240054149732364, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
+      propertyPath: abilities.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8dfcc7df35d688670b3c4801ebe42fa7, type: 2}
+    - target: {fileID: 618240054149732364, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
+      propertyPath: abilities.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 13ea2b2fdfa3c94a79a4b4591a72effc, type: 2}
     - target: {fileID: 4211021565457727729, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
       propertyPath: m_Color.b
       value: 0
