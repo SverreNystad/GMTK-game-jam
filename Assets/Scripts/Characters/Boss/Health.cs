@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     public void Damage(float amount)
     {
         float newHealth = this.health - amount;
+        Debug.Log(newHealth);
         if (newHealth < 0) {
             this.health = 0;
             return;
