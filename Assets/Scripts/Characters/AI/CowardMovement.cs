@@ -36,8 +36,7 @@ namespace AIMovement
         {
             float step = speed * Time.fixedDeltaTime;
             Vector2 targetDirection = (target.position - rb.position).normalized;
-            Vector2 new_move = rb.position - targetDirection * step;//Vector2.MoveTowards(rb.position, target.position, step);
-            Debug.Log($"{targetDirection} | {targetDirection * step} | {new_move}");
+            Vector2 new_move = rb.position - targetDirection * step;
             this.movement = new_move;
             rb.MovePosition(new_move);
         }
