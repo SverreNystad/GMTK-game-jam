@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameSceneManager : MonoBehaviour
+namespace GameState
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameSceneManager : MonoBehaviour
     {
-        
+        public static void LoadIntoMainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        public static void LoadIntoGame()
+        {
+            SceneManager.LoadScene("GameMap");
+        }
+
+        public static void LoadIntoScoreBoard()
+        {
+            SceneManager.LoadScene("ScoreBoard");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
