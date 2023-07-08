@@ -350,6 +350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 979781848611069637, guid: 4d3aba1f542157f6cba6faf5d53e52c5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1656412080652983052, guid: 4d3aba1f542157f6cba6faf5d53e52c5, type: 3}
       propertyPath: m_Name
       value: Yolkman
@@ -402,6 +406,10 @@ PrefabInstance:
       propertyPath: abilities.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: e7f31526209278954992f404671877b0, type: 2}
+    - target: {fileID: 7496891257648006363, guid: 4d3aba1f542157f6cba6faf5d53e52c5, type: 3}
+      propertyPath: abilities.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8dfcc7df35d688670b3c4801ebe42fa7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
