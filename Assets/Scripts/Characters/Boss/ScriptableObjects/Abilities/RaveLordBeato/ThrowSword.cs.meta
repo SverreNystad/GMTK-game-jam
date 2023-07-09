@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 0afe0d322603f209ca4add119d7512bc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - swordPrefab: {fileID: 1546157529143443564, guid: 04145cde0fd1774dd93bb8da5e379989, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
