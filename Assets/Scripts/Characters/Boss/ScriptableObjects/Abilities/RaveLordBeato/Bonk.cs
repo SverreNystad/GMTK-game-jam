@@ -41,7 +41,7 @@ public class Bonk : Ability
         }
     }
 
-    private void CollisionCallback(Transform colliderTransform) {
+    private void CollisionCallback(Transform colliderTransform, Transform attackTransform) {
         if (colliderTransform.tag == spawnedBonkObj.transform.parent.tag) return;
         if (colliderTransform.GetComponent<Health>() == null) {
             Debug.LogWarning("Collided with something that did not have an health component!");
@@ -70,7 +70,13 @@ public class Bonk : Ability
     }
 
     protected override void DoAction(Item[] items)
-    {
+    {   float newAttackMultiplier = 1.0f;
+        foreach(var item in items) {
+            if (item.type != EffectTypeMultiplier.DAMAGE) continue;
+            newAttackMultiplier *= item.amount;
+        }
+        attackMultiplier = newAttackMultiplier;
+
         shouldHaveStartedAnimation = true;
         if (animator == null) {
             Debug.LogWarning("No animator was attached to the object at start, so skipping animation!");

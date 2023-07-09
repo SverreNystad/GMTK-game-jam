@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class AttackCallback : MonoBehaviour
 {
-    private Action<Transform> callback = default;
+    private Action<Transform, Transform> callback = default;
 
-    public void SetCallbackFunction(Action<Transform> function) {
+    public void SetCallbackFunction(Action<Transform, Transform> function) {
         callback = function;
     }
 
@@ -17,7 +17,7 @@ public class AttackCallback : MonoBehaviour
             Debug.LogWarning("The callback function was default, so no callback was set on the weapon");
             return;
         }
-        callback(collision.transform);
+        callback(collision.transform, transform);
     }
     
 }

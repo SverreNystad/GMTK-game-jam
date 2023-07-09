@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: abilities.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 81c60e7ddcba4676da5dcd433ba9b4df, type: 2}
+    - target: {fileID: 618240054149732364, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
+      propertyPath: abilities.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ecd218fc56e2905799d64e15f8a707d, type: 2}
     - target: {fileID: 4211021565457727729, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8211609077771416074}
   - component: {fileID: -157329184782520456}
   - component: {fileID: 5740775861100599395}
+  - component: {fileID: -6156713567371490898}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4299194198701901872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1279154, y: -0.350691, z: -0.019605532}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -193,3 +194,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63d0ff2921a7bed36bd82e2fe6d7840e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6156713567371490898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299194198701901872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d72a6456327b3e0582368739fd43637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToFollow: Hero
+  speed: 1
