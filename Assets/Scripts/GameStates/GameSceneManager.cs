@@ -21,6 +21,11 @@ namespace GameState
         {
             SceneManager.LoadScene("ScoreBoard");
         }
+
+        public static void LoadIntoWaitingRoom()
+        {
+            SceneManager.LoadScene("WaitingRoom");
+        }
     }
 
 }
