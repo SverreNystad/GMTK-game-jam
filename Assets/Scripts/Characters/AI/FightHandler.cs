@@ -20,6 +20,11 @@ public class FightHandler : MonoBehaviour
     private string targetTag = "Boss";
 
 
+    void Awake()
+    {
+        attack.DoOnStart(transform);
+    }
+
     void Start()
     {
         // Get myself and my target
@@ -52,7 +57,8 @@ public class FightHandler : MonoBehaviour
 
     public bool ShouldAttack()
     {
-        float distance = Vector2.Distance(rb.position, target.position);
+        Vector2 targetPosition = new Vector2(target.position.x, target.position.y-((1.0f/3.0f)*target.transform.localScale.y));
+        float distance = Vector2.Distance(rb.position, targetPosition);
         return distance <= range && !attack.IsOnCooldown();
     }
 

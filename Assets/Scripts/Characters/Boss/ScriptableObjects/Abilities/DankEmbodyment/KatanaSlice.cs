@@ -9,7 +9,7 @@ public class KatanaSlice : Ability
     [SerializeField] private float damage = 10.0f;
     [SerializeField] private float attackDuration = 0.5f;
     [SerializeField] private float spawnOffset = 1.0f;
-    private GameObject spawnedKatanaObj = default;
+    private GameObject spawnedKatanaObj = null;
     private IMovement movement = null;
     private float katanaLivedTime = 0.0f;
     private float attackMultiplier = 1.0f;
@@ -20,6 +20,7 @@ public class KatanaSlice : Ability
     }
 
     private void UpdateKatanaAttack() {
+        if (spawnedKatanaObj == null) return;
         if (!spawnedKatanaObj.activeSelf) return;
         katanaLivedTime += Time.deltaTime;
         
@@ -36,6 +37,7 @@ public class KatanaSlice : Ability
     }
 
     public bool IsKatanaActive() {
+        if (spawnedKatanaObj == null) return false;
         return spawnedKatanaObj.activeSelf;
     }
 
@@ -48,6 +50,7 @@ public class KatanaSlice : Ability
             multiplier *= item.amount;
         }
         attackMultiplier = multiplier;
+        if (spawnedKatanaObj == null) return;
         spawnedKatanaObj.SetActive(true);
     }
 
@@ -66,17 +69,18 @@ public class KatanaSlice : Ability
             Debug.LogWarning("The kantana attack duration is more than the cooldown and can cause problems, therefore we are setting the attackduration to cooldown-0.1");
             attackDuration = cooldown-0.1f;
         }
-        if (spawnedKatanaObj == default) {
-            spawnedKatanaObj = Instantiate(katanaObjPrefab, new Vector2(0.0f, spawnOffset), Quaternion.identity, target);
-            spawnedKatanaObj.SetActive(false);
-            if (spawnedKatanaObj.GetComponent<AttackCallback>() == null) {
-                Debug.LogWarning("The object does not have an attack callback and might not work as expected because the ability will never know if there is a collision");
-            } else {
-                spawnedKatanaObj.GetComponent<AttackCallback>().SetCallbackFunction(CollisionCallback);
-            }
+
+        if (spawnedKatanaObj != null) Destroy(spawnedKatanaObj);
+
+        spawnedKatanaObj = Instantiate(katanaObjPrefab, new Vector2(0.0f, spawnOffset), Quaternion.identity, target);
+        spawnedKatanaObj.SetActive(false);
+        if (spawnedKatanaObj.GetComponent<AttackCallback>() == null) {
+            Debug.LogWarning("The object does not have an attack callback and might not work as expected because the ability will never know if there is a collision");
+        } else {
+            spawnedKatanaObj.GetComponent<AttackCallback>().SetCallbackFunction(CollisionCallback);
         }
+
         IMovement movementScript = target.GetComponent<IMovement>();
         if (movementScript != null) movement = movementScript;
     }
-
 }
