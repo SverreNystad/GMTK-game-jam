@@ -10,11 +10,13 @@ public class GameController : MonoBehaviour
     public GameObject[] popups;
     private int timesDefeated = 0;
     private GameObject niceBtn;
+    private BossInputHandler inputHandler;
 
     void Start()
     {
         this.popups = GameObject.FindGameObjectsWithTag("Popup");
         this.niceBtn = GameObject.FindGameObjectWithTag("SpecificButton");
+        this.inputHandler = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossInputHandler>();
 
         foreach (var popup in popups)
         {
@@ -35,7 +37,10 @@ public class GameController : MonoBehaviour
     private void HandleHeroDied(GameObject hero) {
         timesDefeated++;
         Destroy(hero);
-        if (timesDefeated >= 3) HandleWin();
+        if (timesDefeated >= 3){
+            HandleWin();
+            return;
+        };
         Instantiate(heroPrefab, -GameObject.FindGameObjectWithTag("Boss").transform.position, Quaternion.identity);
     }
 
@@ -45,6 +50,9 @@ public class GameController : MonoBehaviour
             popup.SetActive(true);
         }
         niceBtn.SetActive(true);
+
+        inputHandler.canMove = false;
+        inputHandler.canAttack = false;
     }
 
     private void HandleLoss() {
