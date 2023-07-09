@@ -13,7 +13,13 @@ public class RollBackwards : Ability
     protected override void DoAction(Item[] items)
     {
         // Move player in the opposite direction of the last movement input
-        rb.position = rb.position - movement.GetLastDirection();
+        
+        // rb.position = rb.position - movement.GetLastDirection();
+
+        // Test:
+        Vector2 new_move = Vector2.MoveTowards(rb.position, movement.GetLastDirection(), 3/2);
+        rb.MovePosition(new_move);
+
     }
 
     protected override void AddUpdateActions() 
