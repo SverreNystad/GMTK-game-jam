@@ -5,29 +5,41 @@ using TMPro;
 
 public class ChatBubbleHandler : MonoBehaviour
 {
-    private SpriteRenderer backgroundSROuter;
-    private SpriteRenderer backgroundSRInner;
-    private SpriteRenderer iconSR;
-    private TextMeshPro text;
+    [SerializeField] private TextMeshPro text;
+    private float remainingCooldown = 0.0f;
+
     
-    private void Awake()
-    {
-        backgroundSROuter = transform.Find("ChatBackgroundOuter").GetComponent<SpriteRenderer>();
-        backgroundSRInner = transform.Find("ChatBackgroundInner").GetComponent<SpriteRenderer>();
 
-        iconSR = transform.Find("Icon").GetComponent<SpriteRenderer>();
-        text = transform.Find("ChatText").GetComponent<TextMeshPro>();
-    }
-
-    private void Setup(string newText)
+    public void SetText(string newText, float showTime=3)
     {
         text.SetText(newText);
         text.ForceMeshUpdate();
         Vector2 textSize = text.GetRenderedValues(false);
+        remainingCooldown = showTime;
     }
+
+    /// <summary>
+    /// Shall decrease the remaining time of the cooldown
+    /// </summary>
+    private void UpdateCooldown(float deltaTime)
+    {
+        if (remainingCooldown <= 0.0) return;
+        remainingCooldown -= deltaTime;
+    }
+
 
     private void Start()
     {
-        Setup("Hello World!");
+        SetText("Finaly a hero i can beat",5);
     }
+
+    private void Update()
+    {
+        UpdateCooldown(Time.deltaTime);
+        if (remainingCooldown <= 0.0) {
+            SetText("");
+        }
+    }
+
+
 }
