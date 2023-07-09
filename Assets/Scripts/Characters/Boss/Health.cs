@@ -22,15 +22,6 @@ public class Health : MonoBehaviour
     public void Damage(float amount)
     {
         float newHealth = this.health - amount;
-        if (healthBarTagName != "")
-        {
-            Debug.Log(newHealth);
-        }
-        else
-        {
-            Debug.Log(healthBarTagName);
-            Debug.Log(newHealth);
-        }
 
         if (newHealth < 0) {
             this.health = 0;
@@ -44,6 +35,5 @@ public class Health : MonoBehaviour
     {
         float newHealth = this.health + amount;
         this.health = Mathf.Min(newHealth, maxHealth);
-        Debug.Log(this.health);
     }
 }

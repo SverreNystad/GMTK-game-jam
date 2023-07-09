@@ -32,7 +32,7 @@ public class ThrowSword : Ability
         }
         attackMultiplier = newAttackMultiplier;
 
-        GameObject sword = Instantiate(swordPrefab, transform.parent.position, Quaternion.identity);
+        GameObject sword = Instantiate(swordPrefab, transform.position, Quaternion.identity);
         AttackCallback callback = sword.GetComponent<AttackCallback>();
         if (callback == null) return;
         callback.SetCallbackFunction(DoDamage);
@@ -43,14 +43,14 @@ public class ThrowSword : Ability
     }
 
     private void DoDamage(Transform collidee, Transform attacker) {
-        if (collidee.tag == transform.parent.tag) return;
-        else if (collidee.tag == "World") Destroy(attacker);
+        if (collidee.tag == transform.tag) return;
+        else if (collidee.tag == "World") Destroy(attacker.gameObject);
         else if (collidee.tag != "Hero") return;
         if (collidee.GetComponent<Health>() == null) {
             Debug.LogWarning("Collided with something that did not have an health component!");
             return;
         }
         collidee.GetComponent<Health>().Damage(damage * attackMultiplier);
-        Destroy(attacker);
+        Destroy(attacker.gameObject);
     }
 }

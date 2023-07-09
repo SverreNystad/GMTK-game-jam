@@ -44,7 +44,8 @@ public class SpawnMinions : Ability
     }
 
     private void CollisionCallback(Transform colliderTransform, Transform attackerTransform) {
-        if (colliderTransform.tag == transform.parent.tag) return;
+        if (colliderTransform.tag == transform.tag) return;
+        if (colliderTransform.tag == "Weapon") Destroy(attackerTransform.gameObject);
         if (colliderTransform.GetComponent<Health>() == null) {
             Debug.LogWarning("Collided with something that did not have an health component!");
             return;
