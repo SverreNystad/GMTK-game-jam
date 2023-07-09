@@ -36,7 +36,9 @@ public class MinionController : MonoBehaviour, IMovement
             Debug.LogWarning("The minion has no target to follow");
             return;
         }
-        Vector3 targetPos = targetToFollow.transform.position;
-        rb.MovePosition((new Vector2(targetPos.x, targetPos.y) - rb.position) * speed * deltaTime);
+        float step = speed * deltaTime;
+        rb.position = Vector2.MoveTowards(rb.position, targetToFollow.transform.position, step);
+        // Vector3 targetPos = targetToFollow.transform.position;
+        // rb.MovePosition((new Vector2(targetPos.x, targetPos.y) - rb.position) * speed * deltaTime);
     }
 }
