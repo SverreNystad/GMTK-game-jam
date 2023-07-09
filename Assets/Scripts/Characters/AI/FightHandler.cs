@@ -12,7 +12,7 @@ public class FightHandler : MonoBehaviour
     [SerializeField] private Rigidbody2D target;
     [SerializeField] private float range;
     // [SerializeField] private Ability[] abilities = new Ability[3];
-    [SerializeField] private Ability attack;
+    [SerializeField] private KatanaSlice attack;
     [SerializeField] private Ability heal;
     [SerializeField] private Ability rollback;
     [SerializeReference] private Item[] items;
@@ -50,10 +50,18 @@ public class FightHandler : MonoBehaviour
         a.ActivateAbility(items);
     }
 
-    private bool ShouldAttack()
+    public bool ShouldAttack()
     {
         float distance = Vector2.Distance(rb.position, target.position);
         return distance <= range && !attack.IsOnCooldown();
+    }
+
+    public bool IsAttacking() {
+        return attack.IsKatanaActive();
+    }
+
+    public bool IsAttackOnCooldown() {
+        return attack.IsOnCooldown();
     }
 
     /// <sumamry>

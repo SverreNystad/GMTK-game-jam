@@ -35,6 +35,10 @@ public class KatanaSlice : Ability
         spawnedKatanaObj.SetActive(false); 
     }
 
+    public bool IsKatanaActive() {
+        return spawnedKatanaObj.activeSelf;
+    }
+
     protected override void DoAction(Item[] items)
     {
         float multiplier = 1.0f;

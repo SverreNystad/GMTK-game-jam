@@ -14,9 +14,11 @@ namespace AIMovement
 
         private bool shouldAdvance;
         [SerializeField] private int speed;
+        private FightHandler fightHandler;
         void Start()
         {
             // Get myself and my target
+            fightHandler = GetComponent<FightHandler>();
             this.rb = GetComponent<Rigidbody2D>();
             this.target = GameObject.FindWithTag(targetTag).GetComponent<Rigidbody2D>();
         }
@@ -33,6 +35,8 @@ namespace AIMovement
         private void DoMove()
         {
             float step = speed * Time.fixedDeltaTime;
+            if (fightHandler.IsAttackOnCooldown()) step = -step;
+            if (fightHandler.IsAttacking()) step = 0;
             Vector2 new_move = Vector2.MoveTowards(rb.position, target.position, step);
             this.movement = target.position - rb.position;
             rb.MovePosition(new_move);
