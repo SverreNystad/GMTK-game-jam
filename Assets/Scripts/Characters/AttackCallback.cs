@@ -17,7 +17,7 @@ public class AttackCallback : MonoBehaviour
             Debug.LogWarning("The callback function was default, so no callback was set on the weapon");
             return;
         }
-        callback(collision.transform, transform);
+        callback(collision.collider.gameObject.transform, transform);
     }
     
 }

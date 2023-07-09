@@ -8,6 +8,9 @@ TagManager:
   - Hero
   - Minion
   - World
+  - BossHealthBar
+  - HeroHealthBar
+  - Weapon
   layers:
   - Default
   - TransparentFX
