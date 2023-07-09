@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DrinkBeerOBJ
   m_EditorClassIdentifier: 
   <cooldown>k__BackingField: 1
-  healingAmount: 100
+  healingAmount: -10

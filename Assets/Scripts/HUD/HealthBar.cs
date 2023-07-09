@@ -10,6 +10,21 @@ public class HealthBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    //private string targetTag = "Boss";
+    [SerializeField] private Health target;
+
+    void Start()
+    {
+        //this.target = GameObject.FindWithTag(targetTag).GetComponent<Health>();
+        SetMaxHealth((int)target.maxHealth);
+    }
+    
+
+    void Update()
+    {
+        Debug.Log(target.health);
+        SetHealth((int)target.health);
+    }
 
     public void SetMaxHealth(int max_health){
         slider.maxValue = max_health;
