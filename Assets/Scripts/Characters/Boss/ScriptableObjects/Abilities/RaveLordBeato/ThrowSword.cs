@@ -46,10 +46,12 @@ public class ThrowSword : Ability
         if (collidee.tag == transform.tag) return;
         else if (collidee.tag == "World") Destroy(attacker.gameObject);
         else if (collidee.tag != "Hero") return;
+
         if (collidee.GetComponent<Health>() == null) {
             Debug.LogWarning("Collided with something that did not have an health component!");
             return;
         }
+        
         collidee.GetComponent<Health>().Damage(damage * attackMultiplier);
         Destroy(attacker.gameObject);
     }
