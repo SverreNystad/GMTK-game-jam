@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameState;
 using UnityEngine;
 
 public class MainBossHandler : MonoBehaviour
@@ -29,6 +30,7 @@ public class MainBossHandler : MonoBehaviour
     {
         if (!health.IsAlive()){
             inputHandler.canMove = false;
+            GameSceneManager.LoadIntoWaitingRoom();
             return;
         }
         foreach (var ability in abilities) ability.DoUpdate();

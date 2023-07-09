@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scoreboard/Scoreboard.unity
     guid: f044f5350dcdcdc08beb7fc0b86b558f
+  - enabled: 1
+    path: Assets/Scenes/WaitingRoom.unity
+    guid: 96718a514eaec694bb5e421cded38c61
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fe1678a508fc6b775938dfce2391b39e, type: 2}
