@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   target: {fileID: 0}
-  range: 2
+  range: 3.25
   attack: {fileID: 11400000, guid: 13ea2b2fdfa3c94a79a4b4591a72effc, type: 2}
   heal: {fileID: 11400000, guid: 8dfcc7df35d688670b3c4801ebe42fa7, type: 2}
   rollback: {fileID: 11400000, guid: e7f31526209278954992f404671877b0, type: 2}
