@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BossInputHandler : MonoBehaviour, IMovement
@@ -12,11 +12,21 @@ public class BossInputHandler : MonoBehaviour, IMovement
     private Vector2 movement;
     private Vector2 lastMovementDir = new Vector2(1.0f, 0.0f);
     [SerializeField] private int speed;
-    public bool canMove {get; set;} = true;
+    public bool canMove {get; set;}
+    public bool canAttack {get; set;}
 
     void Start()
     { 
         rb = GetComponent<Rigidbody2D>();
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "WaitingRoom"){
+            canMove = true;
+            canAttack = false;
+        }
+        else if (scene.name == "GameMap"){
+            canMove = true;
+            canAttack = true;
+        }
     }
 
     void FixedUpdate() 

@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
         else
         {
             Debug.Log(healthBarTagName);
+            Debug.Log(newHealth);
         }
 
         if (newHealth < 0) {

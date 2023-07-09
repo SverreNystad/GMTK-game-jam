@@ -30,6 +30,7 @@ public class MainBossHandler : MonoBehaviour
     {
         if (!health.IsAlive()){
             inputHandler.canMove = false;
+            inputHandler.canAttack = false;
             GameSceneManager.LoadIntoWaitingRoom();
             return;
         }
@@ -37,14 +38,20 @@ public class MainBossHandler : MonoBehaviour
     }
     
     private void OnAbilityOne() {
-        abilities[0].ActivateAbility(items);
+        if (inputHandler.canAttack){
+            abilities[0].ActivateAbility(items);
+        }
     }
 
     private void OnAbilityTwo() {
-        abilities[1].ActivateAbility(items);
+        if (inputHandler.canAttack){
+            abilities[1].ActivateAbility(items);
+        }
     }
 
     private void OnAbilityThree() {
-        abilities[2].ActivateAbility(items);
+        if (inputHandler.canAttack){
+            abilities[2].ActivateAbility(items);
+        }
     }
 }
