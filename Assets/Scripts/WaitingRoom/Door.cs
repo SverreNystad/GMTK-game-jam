@@ -38,6 +38,8 @@ public class Door : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        inputHandler.animator.SetBool("IsWalkingForward", false);
+        inputHandler.animator.SetBool("IsWalkingSideways", false);
         inputHandler.canMove = false;
         foreach (var popup in popups)
         {

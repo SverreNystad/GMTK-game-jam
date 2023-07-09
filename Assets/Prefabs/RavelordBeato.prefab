@@ -36,6 +36,10 @@ PrefabInstance:
       propertyPath: abilities.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 873e7abdcaf0ddaba8bc2af02ac86912, type: 2}
+    - target: {fileID: 4047930184900433106, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1474593711356925850}
     - target: {fileID: 4211021565457727729, guid: fb6ab44adfc0e56faa363da2b2eab56b, type: 3}
       propertyPath: m_Sprite
       value: 
