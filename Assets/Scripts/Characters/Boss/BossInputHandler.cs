@@ -12,7 +12,7 @@ public class BossInputHandler : MonoBehaviour, IMovement
     private Vector2 movement;
     private Vector2 lastMovementDir = new Vector2(1.0f, 0.0f);
     [SerializeField] private int speed;
-
+    public bool canMove {get; set;} = true;
 
     void Start()
     { 
@@ -30,9 +30,11 @@ public class BossInputHandler : MonoBehaviour, IMovement
     /// </summary>
     private void OnMove(InputValue movementValue)
     {
-        movement = movementValue.Get<Vector2>();
-        if (movement == new Vector2(0.0f, 0.0f)) return;
-        lastMovementDir = movement;
+        if (canMove) {
+            movement = movementValue.Get<Vector2>();
+            if (movement == new Vector2(0.0f, 0.0f)) return;
+            lastMovementDir = movement;
+        }
     }
 
     public void DoFixedMove() 
