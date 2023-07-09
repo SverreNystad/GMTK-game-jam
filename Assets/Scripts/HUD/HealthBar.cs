@@ -24,6 +24,7 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
+        if (target == null && tagToShowHealthFor != "") target = GameObject.FindGameObjectWithTag(tagToShowHealthFor).GetComponent<Health>(); 
         SetHealth((int)target.health);
     }
 
