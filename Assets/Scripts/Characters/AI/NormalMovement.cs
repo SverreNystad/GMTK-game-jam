@@ -12,7 +12,7 @@ namespace AIMovement
 
         private Vector2 movement;
 
-        private float aggressiveness;
+        private bool shouldAdvance;
         [SerializeField] private int speed;
         void Start()
         {
@@ -34,7 +34,7 @@ namespace AIMovement
         {
             float step = speed * Time.fixedDeltaTime;
             Vector2 new_move = Vector2.MoveTowards(rb.position, target.position, step);
-            this.movement = new_move;
+            this.movement = target.position - rb.position;
             rb.MovePosition(new_move);
         }
 

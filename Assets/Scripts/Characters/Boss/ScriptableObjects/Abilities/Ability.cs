@@ -52,7 +52,7 @@ public abstract class Ability : ScriptableObject
     /// </summary>
     protected void UpdateCooldown(float deltaTime)
     {
-        if (remainingCooldown <= 0.0) return;
+        if (!IsOnCooldown()) return;
         remainingCooldown -= deltaTime;
     }
 
@@ -62,5 +62,9 @@ public abstract class Ability : ScriptableObject
         
         UpdateCooldown(Time.deltaTime);
         foreach (Action actionToDo in updateActions) actionToDo();
+    }
+
+    public bool IsOnCooldown() {
+        return remainingCooldown > 0.0;
     }
 }
