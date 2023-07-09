@@ -12,8 +12,10 @@ public class BossInputHandler : MonoBehaviour, IMovement
     private Vector2 movement;
     private Vector2 lastMovementDir = new Vector2(1.0f, 0.0f);
     [SerializeField] private int speed;
+    public Animator animator;
     public bool canMove {get; set;}
     public bool canAttack {get; set;}
+    private bool isMoving;
 
     void Start()
     { 
@@ -26,6 +28,14 @@ public class BossInputHandler : MonoBehaviour, IMovement
         else if (scene.name == "GameMap"){
             canMove = true;
             canAttack = true;
+        }
+    }
+
+    void Update()
+    {
+        if (!isMoving){
+            animator.SetBool("IsWalkingForward", false);
+            animator.SetBool("IsWalkingSideways", false);
         }
     }
 
@@ -42,7 +52,21 @@ public class BossInputHandler : MonoBehaviour, IMovement
     {
         if (canMove) {
             movement = movementValue.Get<Vector2>();
-            if (movement == new Vector2(0.0f, 0.0f)) return;
+            if (movement == new Vector2(0.0f, 0.0f)){
+                isMoving = false;
+                return;
+            }
+            isMoving = true;
+
+            if (movement.y != 0){
+                animator.SetBool("IsWalkingSideways", false);
+                animator.SetBool("IsWalkingForward", true);
+            }
+            else if (movement.x != 0){
+                animator.SetBool("IsWalkingForward", false);
+                animator.SetBool("IsWalkingSideways", true);
+            }
+
             lastMovementDir = movement;
         }
     }

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: crabbing_ravelord_beato
+  m_Name: Idle_Knight
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1282007908, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
+      value: {fileID: 598094875, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
     - time: 0.11666667
-      value: {fileID: -318744980, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
+      value: {fileID: 583701331, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
     - time: 0.21666667
-      value: {fileID: -1350229915, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
+      value: {fileID: -86822216, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
     - time: 0.33333334
-      value: {fileID: -355073303, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
+      value: {fileID: -1819457114, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1282007908, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
-    - {fileID: -318744980, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
-    - {fileID: -1350229915, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
-    - {fileID: -355073303, guid: 9a99473f0ccc9fd42ba5e7622481540c, type: 3}
+    - {fileID: 598094875, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
+    - {fileID: 583701331, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
+    - {fileID: -86822216, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
+    - {fileID: -1819457114, guid: 8cf2b295b77ff12f4810bd6694b56873, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
