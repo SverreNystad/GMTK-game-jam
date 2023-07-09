@@ -30,7 +30,7 @@ public class ChatBubbleHandler : MonoBehaviour
 
     private void Start()
     {
-        SetText("Finaly a hero i can beat",5);
+        SetText("Finally a hero i can beat",5);
     }
 
     private void Update()
