@@ -5,7 +5,9 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [field: SerializeField] public float maxHealth {get; private set;}
+    [SerializeField] private string healthBarTagName = "";
     public float health {get; private set;}
+    HealthBar[] healthBar;
 
     void Start()
     {
@@ -20,12 +22,21 @@ public class Health : MonoBehaviour
     public void Damage(float amount)
     {
         float newHealth = this.health - amount;
-        Debug.Log(newHealth);
+        if (healthBarTagName != "")
+        {
+            Debug.Log(newHealth);
+        }
+        else
+        {
+            Debug.Log(healthBarTagName);
+        }
+
         if (newHealth < 0) {
             this.health = 0;
             return;
         }
         this.health = newHealth;
+
     }
 
     public void Heal(float amount)
