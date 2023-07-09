@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0556bbaac35974976be42610fab69bb0, type: 3}
   m_Name: BonkOBJ
   m_EditorClassIdentifier: 
-  <cooldown>k__BackingField: 1
+  <cooldown>k__BackingField: 0.25
   bonkObjPrefab: {fileID: 3249654161056349542, guid: 5d6b5fd02b2137b6eaf9a5109e725f4a, type: 3}
-  damage: 50
+  damage: 45
   attackDuration: 0.1
   spawnOffset: -1

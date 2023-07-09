@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31ff4af0ca0513078ef406dad11942f, type: 3}
   m_Name: SpawnMinionsOBJ
   m_EditorClassIdentifier: 
-  <cooldown>k__BackingField: 1
+  <cooldown>k__BackingField: 5
   minionPrefab: {fileID: 4299194198701901872, guid: 934cb0204a4eb66c18505845c25c4a54, type: 3}
   amountOfMinionsToSpawn: 3
-  damage: 10
+  damage: 2

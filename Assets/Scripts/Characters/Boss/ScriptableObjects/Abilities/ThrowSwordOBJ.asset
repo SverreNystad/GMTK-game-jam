@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0afe0d322603f209ca4add119d7512bc, type: 3}
   m_Name: ThrowSwordOBJ
   m_EditorClassIdentifier: 
-  <cooldown>k__BackingField: 1
+  <cooldown>k__BackingField: 5
   swordPrefab: {fileID: 1546157529143443564, guid: 04145cde0fd1774dd93bb8da5e379989, type: 3}
-  damage: 75
+  damage: 15

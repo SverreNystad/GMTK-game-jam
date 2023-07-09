@@ -23,6 +23,7 @@ public class Health : MonoBehaviour
     {
         float newHealth = this.health - amount;
 
+        Debug.Log(newHealth);
         if (newHealth < 0) {
             this.health = 0;
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().Died(transform);
