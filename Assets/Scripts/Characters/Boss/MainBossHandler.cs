@@ -9,6 +9,14 @@ public class MainBossHandler : MonoBehaviour
     [SerializeReference] private Item[] items;
     [SerializeField] private IMovement movementController;
     [SerializeField] private float speed;
+    [SerializeField] private Health health;
+    [SerializeField] private BossInputHandler inputHandler;
+
+    void Awake()
+    {
+        this.health = GetComponent<Health>();
+        this.inputHandler = GetComponent<BossInputHandler>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +27,10 @@ public class MainBossHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!health.IsAlive()){
+            inputHandler.canMove = false;
+            return;
+        }
         foreach (var ability in abilities) ability.DoUpdate();
     }
     
