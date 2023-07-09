@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5241174054279997948}
   - component: {fileID: 2748496150685113148}
   - component: {fileID: 6120448472402797400}
+  - component: {fileID: 7580381431746914706}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Hero
@@ -194,15 +195,6 @@ MonoBehaviour:
   heal: {fileID: 11400000, guid: 8dfcc7df35d688670b3c4801ebe42fa7, type: 2}
   rollback: {fileID: 11400000, guid: e7f31526209278954992f404671877b0, type: 2}
   items: []
---- !u!114 &7992140550144131610
-MonoBehaviour:
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c69bcf98c7a027b0a4eddfed638a993, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  target: {fileID: 0}
-  speed: 1
 --- !u!95 &6120448472402797400
 Animator:
   serializedVersion: 5
@@ -224,3 +216,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7580381431746914706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647207920109051076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c69bcf98c7a027b0a4eddfed638a993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  target: {fileID: 0}
+  speed: 1
+--- !u!114 &7992140550144131610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c69bcf98c7a027b0a4eddfed638a993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  target: {fileID: 0}
+  speed: 1
