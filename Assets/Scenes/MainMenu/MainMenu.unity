@@ -1373,8 +1373,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 44}
-  m_SizeDelta: {x: 553.74, y: 206.3098}
+  m_AnchoredPosition: {x: 0, y: 6.3747}
+  m_SizeDelta: {x: 553.74, y: 281.5603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010702081
 MonoBehaviour:
@@ -1398,23 +1398,21 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Welcome back, Ravelord Beato!
 
-    Another day, another hero to beat
-    so hard that they throw their controllers and ragequit. Most heroes are quite
-    impatient these days, and give up after only three tries.
+    Another day, another hero to beat so
+    hard that they throw their controllers and ragequit. Most heroes are quite impatient
+    these days, and give up after only three tries.
 
-    
 
-    Use the
-    WASD or arrow keys to move, and the X, C and V buttons for abilities. The X button
-    lets you do a powerful bonk with your glowstick. The C button spawns a horde
-    of your minions, which you can push into the hero to make them explode on them
-    ;) The V button lets you throw your mighty glowstick at the hero. But be warned,
-    the hero is not to be underestimated.
+    Use the WASD or arrow keys
+    to move, and the X, C and V buttons for abilities. The X button lets you do a
+    powerful bonk with your glowstick. The C button spawns a horde of your minions,
+    which you can push into the hero to make them explode on them ;) The V button
+    lets you throw your mighty glowstick at the hero. But be warned, the hero is
+    not to be underestimated.
 
-    
 
-    The faster you finish your
-    daily quota, the faster you can get back to raving! Good luck :)'
+    The faster you finish your daily quota, the faster
+    you can get back to raving! Good luck :)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
