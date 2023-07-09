@@ -47,7 +47,7 @@ public class KatanaSlice : Ability
         spawnedKatanaObj.SetActive(true);
     }
 
-    private void CollisionCallback(Transform colliderTransform) {
+    private void CollisionCallback(Transform colliderTransform, Transform attackTransform) {
         if (colliderTransform.tag == spawnedKatanaObj.transform.parent.tag) return;
         if (colliderTransform.GetComponent<Health>() == null) {
             Debug.LogWarning("Collided with something that did not have an health component!");
