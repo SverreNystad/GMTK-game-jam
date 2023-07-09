@@ -30,6 +30,7 @@ public class BossInputHandler : MonoBehaviour, IMovement
     /// </summary>
     private void OnMove(InputValue movementValue)
     {
+        Debug.Log("I MOVE");
         movement = movementValue.Get<Vector2>();
         if (movement == new Vector2(0.0f, 0.0f)) return;
         lastMovementDir = movement;
