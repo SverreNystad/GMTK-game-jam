@@ -9,6 +9,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    public string tagToShowHealthFor = "";
 
     //private string targetTag = "Boss";
     [SerializeField] private Health target;
@@ -16,6 +17,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         //this.target = GameObject.FindWithTag(targetTag).GetComponent<Health>();
+        if (tagToShowHealthFor != "") target = GameObject.FindGameObjectWithTag(tagToShowHealthFor).GetComponent<Health>();
         SetMaxHealth((int)target.maxHealth);
     }
     
