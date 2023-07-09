@@ -42,7 +42,6 @@ namespace AIMovement
             Vector2 targetPosition = new Vector2(target.position.x, target.position.y-((1.0f/3.0f)*target.transform.localScale.y));
             Vector2 new_move = Vector2.MoveTowards(rb.position, targetPosition, step);
             this.movement = targetPosition - rb.position;
-            Debug.Log(targetPosition);
             rb.MovePosition(new_move);
             if (step != 0) {
                 anim.SetBool("IsWalking", true);
