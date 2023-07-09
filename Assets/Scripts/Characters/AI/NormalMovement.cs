@@ -9,14 +9,18 @@ namespace AIMovement
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private Rigidbody2D target;
         private string targetTag = "Boss";
+        private Animator anim;
 
         private Vector2 movement;
 
-        private float aggressiveness;
+        private bool shouldAdvance;
         [SerializeField] private int speed;
+        private FightHandler fightHandler;
         void Start()
         {
             // Get myself and my target
+            anim = GetComponent<Animator>();
+            fightHandler = GetComponent<FightHandler>();
             this.rb = GetComponent<Rigidbody2D>();
             this.target = GameObject.FindWithTag(targetTag).GetComponent<Rigidbody2D>();
         }
@@ -33,9 +37,16 @@ namespace AIMovement
         private void DoMove()
         {
             float step = speed * Time.fixedDeltaTime;
-            Vector2 new_move = Vector2.MoveTowards(rb.position, target.position, step);
-            this.movement = new_move;
+            if (fightHandler.IsAttackOnCooldown()) step = -step;
+            if (fightHandler.IsAttacking()) step = 0;
+            Vector2 new_move = Vector2.MoveTowards(rb.position, new Vector2(target.position.x, target.position.y-(1.0f/3.0f)), step);
+            this.movement = new Vector2(target.position.x, target.position.y-(1.0f/3.0f)) - rb.position;
             rb.MovePosition(new_move);
+            if (step != 0) {
+                anim.SetBool("IsWalking", true);
+                return;
+            }
+            anim.SetBool("IsWalking", false);
         }
 
         private Vector2 FindDirection() {

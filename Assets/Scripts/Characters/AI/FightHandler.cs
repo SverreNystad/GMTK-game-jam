@@ -11,7 +11,10 @@ public class FightHandler : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Rigidbody2D target;
     [SerializeField] private float range;
-    [SerializeField] private Ability[] abilities = new Ability[3];
+    // [SerializeField] private Ability[] abilities = new Ability[3];
+    [SerializeField] private KatanaSlice attack;
+    [SerializeField] private Ability heal;
+    [SerializeField] private Ability rollback;
     [SerializeReference] private Item[] items;
 
     private string targetTag = "Boss";
@@ -23,39 +26,57 @@ public class FightHandler : MonoBehaviour
         this.rb = GetComponent<Rigidbody2D>();
         GameObject targetGO = GameObject.FindWithTag(targetTag);
         this.target = targetGO.GetComponent<Rigidbody2D>();
-        foreach(var ability in abilities) ability.DoOnStart(transform);
+        attack.DoOnStart(transform);
+        heal.DoOnStart(transform);
+        rollback.DoOnStart(transform);
+        // foreach(var ability in abilities) ability.DoOnStart(transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (var ability in abilities) ability.DoUpdate();
-        attack();
+        // foreach (var ability in abilities) ability.DoUpdate();
+        attack.DoUpdate();
+        heal.DoUpdate();
+        rollback.DoUpdate();
+        DoAbility();
     }
 
 
-    public void attack() 
+    public void DoAbility() 
     {
-        if (shouldAttack()) {
-            Ability a = chooseAbility();
-            a.ActivateAbility(items);
-        }
+        Ability a = ChooseAbility();
+        if (a == null) return;
+        a.ActivateAbility(items);
     }
 
-    private bool shouldAttack()
+    public bool ShouldAttack()
     {
         float distance = Vector2.Distance(rb.position, target.position);
-        return range <= distance;
+        return distance <= range && !attack.IsOnCooldown();
+    }
+
+    public bool IsAttacking() {
+        return attack.IsKatanaActive();
+    }
+
+    public bool IsAttackOnCooldown() {
+        return attack.IsOnCooldown();
     }
 
     /// <sumamry>
     /// Take a random ability and return it
     /// </sumamry>
-    private Ability chooseAbility() 
+    private Ability ChooseAbility() 
     {
-        var random = new System.Random();
-        int chooseIndex = random.Next(0, 3);
-        return abilities[chooseIndex];
+        if (ShouldAttack()) return attack;
+        var healthComp = rb.GetComponent<Health>();
+        if (healthComp.health == healthComp.maxHealth) return null;
+        if (healthComp.health <= healthComp.maxHealth/2.0f && Vector2.Distance(rb.position, target.position) < (range + 1.0f)) return rollback;
+        return heal; 
+        // var random = new System.Random();
+        // int chooseIndex = random.Next(0, 3);
+        // return abilities[chooseIndex];
     }
 
 }
