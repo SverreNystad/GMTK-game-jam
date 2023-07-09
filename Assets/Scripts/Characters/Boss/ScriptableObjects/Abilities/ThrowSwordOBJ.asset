@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <cooldown>k__BackingField: 1
   swordPrefab: {fileID: 1546157529143443564, guid: 04145cde0fd1774dd93bb8da5e379989, type: 3}
-  damage: 30
+  damage: 75

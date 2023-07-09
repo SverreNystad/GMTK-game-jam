@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
 
         if (newHealth < 0) {
             this.health = 0;
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().Died(transform);
             return;
         }
         this.health = newHealth;

@@ -31,7 +31,7 @@ public class MainBossHandler : MonoBehaviour
         if (!health.IsAlive()){
             inputHandler.canMove = false;
             inputHandler.canAttack = false;
-            GameSceneManager.LoadIntoWaitingRoom();
+            // GameSceneManager.LoadIntoWaitingRoom();
             return;
         }
         foreach (var ability in abilities) ability.DoUpdate();
