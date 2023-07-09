@@ -12,6 +12,7 @@ TagManager:
   - BossHealthBar
   - HeroHealthBar
   - Weapon
+  - SpecificButton
   layers:
   - Default
   - TransparentFX
